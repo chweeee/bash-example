@@ -19,6 +19,12 @@ steps:
     command: exit -1
 
   - wait
+  
+  - trigger: "pipeline"
+    label: ":package: rebuilding master"
+    build:
+      branch: "master"
+      commit: "HEAD"
 
   - label: "dummy step 3"
     command: echo "Dummy 3"
