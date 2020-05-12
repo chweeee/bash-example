@@ -11,7 +11,7 @@ steps:
   - wait
 
   - label: "dummy step 1"
-    command: echo build.branch
+    command: echo ${BUILDKITE_BRANCH}
 
   - wait
 
