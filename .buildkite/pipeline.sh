@@ -7,10 +7,20 @@ cat << EOF
 steps:
   - label: "Example Test"
     command: echo "Hello World!"
+
+  - wait
+
   - label: "dummy step 1"
-    command: echo "Dummy 1"
+    command: echo build.branch
+
+  - wait
+
   - label: "dummy step 2"
     command: exit -1
+    if: build.branch == "master"
+
+  - wait
+
   - label: "dummy step 3"
     command: echo "Dummy 3"
 
