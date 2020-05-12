@@ -20,7 +20,7 @@ steps:
 
   - wait
   
-  - trigger: "pipeline"
+  - trigger: ".buildkite/pipeline.sh"
     label: ":package: rebuilding master"
     build:
       branch: "master"
