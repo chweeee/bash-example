@@ -28,6 +28,6 @@ steps:
       commit: "HEAD"
 
   - label: "dummy step 3"
-    command: echo "Dummy 3"
+    command: echo "Dummmy 3"
 
 EOF
