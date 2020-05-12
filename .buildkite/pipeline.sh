@@ -17,7 +17,6 @@ steps:
 
   - label: "dummy step 2"
     command: exit -1
-    if: build.branch == "master"
 
   - wait
 
