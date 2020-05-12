@@ -11,5 +11,7 @@ steps:
     command: echo "Dummy 1"
   - label: "dummy step 2"
     command: echo "Dummy 2"
+  - label: "dummy step 3"
+    command: echo "Dummy 3"
 
 EOF
