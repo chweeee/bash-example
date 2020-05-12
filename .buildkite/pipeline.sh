@@ -18,7 +18,8 @@ steps:
   - label: "dummy step 2"
     command: exit -1
 
-  - wait
+  - wait: ~
+    continue_on_failure: true
   
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
