@@ -10,7 +10,7 @@ steps:
   - label: "dummy step 1"
     command: echo "Dummy 1"
   - label: "dummy step 2"
-    command: echo "Dummy 2"
+    command: exit -1
   - label: "dummy step 3"
     command: echo "Dummy 3"
 
