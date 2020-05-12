@@ -6,5 +6,6 @@ set -eu
 cat << EOF
 steps:
   - label: "Example Test"
-    command: echo "Hello!"
+    command: echo "Hello World!"
+
 EOF
