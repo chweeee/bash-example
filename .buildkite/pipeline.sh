@@ -18,11 +18,11 @@ steps:
   - label: "dummy step 2"
     command: exit -1
 
-  - wait: ~
-    continue_on_failure: true
+  - wait
   
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
+    allow_dependency_failure: "dummy step 2"
     build:
       branch: "master"
       commit: "HEAD"
