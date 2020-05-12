@@ -19,6 +19,7 @@ steps:
     command: exit -1
 
   - wait
+    continue_on_failure: true
   
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
