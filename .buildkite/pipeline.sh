@@ -22,7 +22,9 @@ steps:
   
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
-    allow_dependency_failure: "dummy step 2"
+    depends on:
+      - step: "dummy step 2"
+        allow_failure: true
     build:
       branch: "master"
       commit: "HEAD"
