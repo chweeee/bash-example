@@ -20,7 +20,7 @@ steps:
 
   - wait
   
-  - trigger: ".buildkite/pipeline.sh"
+  - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
     build:
       branch: "master"
