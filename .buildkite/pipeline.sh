@@ -18,7 +18,8 @@ steps:
   - label: "dummy step 2"
     command: 
       - exit -1
-      - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
+    artifact_paths:
+      - "logs/**/*"
 
   - wait
   
