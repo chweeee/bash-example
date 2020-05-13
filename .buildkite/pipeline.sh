@@ -24,7 +24,6 @@ steps:
 
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
-    if: build.env("BUILDKITE_TAG") != 0
     build:
       branch: "master"
       commit: "HEAD"
