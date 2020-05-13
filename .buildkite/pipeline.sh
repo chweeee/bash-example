@@ -21,6 +21,7 @@ steps:
 
   - label: "dummy step 2"
     command:
+       - echo `buildkite-agent meta-data get "release-version"`
        - exit -1
 #      - echo -1
 #      - if [ $? -ne 0 ]; then EXIT_CODE=1; fi
