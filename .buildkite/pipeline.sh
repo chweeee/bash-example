@@ -10,7 +10,6 @@ steps:
   - label: "Example Test"
     command: 
       - echo "Hello World!"
-      - buildkite-agent meta-data set "release-version" "1.1"
 
   - wait
 
@@ -21,11 +20,8 @@ steps:
 
   - label: "dummy step 2"
     command:
-       - echo `buildkite-agent meta-data get "release-version"`
+       - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
        - exit -1
-#      - echo -1
-#      - if [ $? -ne 0 ]; then EXIT_CODE=1; fi
-#      - exit ${EXIT_CODE}
 
   - wait
   
