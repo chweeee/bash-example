@@ -10,30 +10,19 @@ steps:
   - label: "Example Test"
     command: 
       - echo "Hello World!"
-      - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
-
-  - wait
-
-  - label: "dummy step 1"
-    command: echo ${BUILDKITE_BRANCH}
 
   - wait
 
   - label: "dummy step 2"
     command:
+       - env
        - exit -1
-       - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
  
   - wait: ~
     continue_on_failure: true
 
-  - label: "dummy step 2"
-    command:
-       - env | grep EXIT
-
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
-    if: ${BUILDKITE_LAST_HOOK_EXIT_STATUS} != 0
     build:
       branch: "master"
       commit: "HEAD"
