@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # exit immediately on failure, or if an undefined variable is used
-set -e
+# set -eu
 
 EXIT_CODE=0
 
@@ -16,7 +16,7 @@ steps:
   - label: "dummy step 2"
     command:
        - env
-       - exit -1
+       - return -1
  
   - wait: ~
     continue_on_failure: true
