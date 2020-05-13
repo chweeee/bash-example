@@ -20,7 +20,7 @@ steps:
 
   - label: "dummy step 2"
     command:
-       - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
+       - env
        - exit -1
 
   - wait
