@@ -3,6 +3,8 @@
 # exit immediately on failure, or if an undefined variable is used
 set -eu
 
+EXIT_CODE=0
+
 cat << EOF
 steps:
   - label: "Example Test"
@@ -17,9 +19,9 @@ steps:
 
   - label: "dummy step 2"
     command: 
-      - exit -1
-    artifact_paths:
-      - "logs/**/*"
+      - echo -1
+      - if [ $? -ne 0 ]; then EXIT_CODE=1; fi
+      - exit ${EXIT_CODE}
 
   - wait
   
