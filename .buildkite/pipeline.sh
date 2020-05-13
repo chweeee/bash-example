@@ -10,6 +10,7 @@ steps:
   - label: "Example Test"
     command: 
       - echo "Hello World!"
+      - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
 
   - wait
 
