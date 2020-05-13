@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # exit immediately on failure, or if an undefined variable is used
-set -eu
+set -e
 
 EXIT_CODE=0
 
@@ -20,6 +20,7 @@ steps:
 
   - label: "dummy step 2"
     command:
+       - echo ${BUILDKITE_LAST_HOOK_EXIT_STATUS}
        - exit -1
 
   - wait: ~
