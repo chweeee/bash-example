@@ -26,7 +26,7 @@ steps:
     continue_on_failure: true
 
   - label: "AAAA"
-    command: echo ${BUILDKITE_LAST_HOOK_EXIT_STATUS}
+#    command: echo ${BUILDKITE_LAST_HOOK_EXIT_STATUS}
   
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
