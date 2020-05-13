@@ -25,6 +25,10 @@ steps:
   - wait: ~
     continue_on_failure: true
 
+  - label: "dummy step 2"
+    command:
+       - env | grep EXIT
+
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
     if: ${BUILDKITE_LAST_HOOK_EXIT_STATUS} != 0
