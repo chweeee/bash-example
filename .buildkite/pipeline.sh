@@ -20,7 +20,7 @@ steps:
 
   - label: "dummy step 2"
     command:
-       - exit 0
+       - exit -1
  
   - wait: ~
     continue_on_failure: true
