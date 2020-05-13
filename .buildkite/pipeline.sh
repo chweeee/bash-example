@@ -8,7 +8,9 @@ EXIT_CODE=0
 cat << EOF
 steps:
   - label: "Example Test"
-    command: echo "Hello World!"
+    command: 
+      - echo "Hello World!"
+      - buildkite-agent meta-data set "release-version" "1.1"
 
   - wait
 
