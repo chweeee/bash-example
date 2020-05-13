@@ -18,10 +18,11 @@ steps:
   - wait
 
   - label: "dummy step 2"
-    command: 
-      - echo -1
-      - if [ $? -ne 0 ]; then EXIT_CODE=1; fi
-      - exit ${EXIT_CODE}
+    command:
+       - exit -1
+#      - echo -1
+#      - if [ $? -ne 0 ]; then EXIT_CODE=1; fi
+#      - exit ${EXIT_CODE}
 
   - wait
   
