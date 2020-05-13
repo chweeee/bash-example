@@ -21,6 +21,7 @@ steps:
   - label: "dummy step 2"
     command:
        - exit -1
+       - echo ${BUILDKITE_LAST_HOOK_EXIT_STATUS}
  
   - wait: ~
     continue_on_failure: true
