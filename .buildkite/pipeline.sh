@@ -20,15 +20,14 @@ steps:
 
   - label: "dummy step 2"
     command:
-       - echo ${BUILDKITE_LAST_HOOK_EXIT_STATUS}
-       - exit -1
-       - echo ${BUILDKITE_LAST_HOOK_EXIT_STATUS}
-
+       - exit 0
+ 
   - wait: ~
     continue_on_failure: true
 
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
+    if: ${BUILDKITE_LAST_HOOK_EXIT_STATUS} != 0
     build:
       branch: "master"
       commit: "HEAD"
