@@ -16,15 +16,14 @@ steps:
   - wait
 
   - label: "dummy step 2"
-    command: exit -1
+    command: 
+      - exit -1
+      - echo ${BUILDKITE_COMMAND_EXIT_STATUS}
 
   - wait
   
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
-    allow_dependency_failure: true
-    depends_on:
-      - step: "dummy-step-2"
     build:
       branch: "master"
       commit: "HEAD"
