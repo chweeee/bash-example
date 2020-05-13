@@ -18,18 +18,13 @@ steps:
        - env
        - exit -1
        - EXIT_CODE=$?
-    trigger: "soft-tofu-stew"
-    label: ":package: rebuilding master"
-    if: build.env("BUILDKITE_LAST_HOOK_EXIT_STATUS") != 0
-    build:
-      branch: "master"
-      commit: "HEAD" 
 
   - wait: ~
     continue_on_failure: true
 
   - trigger: "soft-tofu-stew"
     label: ":package: rebuilding master"
+    if: build.env("BUILDKITE_LAST_HOOK_EXIT_STATUS") != 0
     build:
       branch: "master"
       commit: "HEAD"
